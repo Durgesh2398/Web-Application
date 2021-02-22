@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title>PHP - Jquery Datatables Example</title>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+   <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"/>
+
+</head>
+<body>
+<div class="container">
+  <table id="my-example">
+    <thead>
+      <tr>
+          <th>Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Password</th>
+          <th>Statuss</th>
+          <th>Adminn</th> 
+      </tr>
+    </thead>
+  </table>
+</div>
+</body>
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#my-example').dataTable({
+        "bProcessing": true,
+        "sAjaxSource": "pro.php",
+        "aoColumns": [
+              { mData: 'id' } ,
+              { mData: 'First_Name' },
+              { mData: 'Last_Name' },
+              { mData: 'Passwordd' },
+              { mData: 'Statuss' },
+              { mData: 'Adminn' }
+            ]
+      });  
+  });
+</script>
+</html>
